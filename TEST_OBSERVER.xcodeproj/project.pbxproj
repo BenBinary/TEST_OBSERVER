@@ -16,6 +16,12 @@
 		CD52F36F2609319F00209B9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD52F36D2609319F00209B9E /* LaunchScreen.storyboard */; };
 		CD52F37A2609319F00209B9E /* TEST_OBSERVERTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52F3792609319F00209B9E /* TEST_OBSERVERTests.swift */; };
 		CD52F385260931A000209B9E /* TEST_OBSERVERUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52F384260931A000209B9E /* TEST_OBSERVERUITests.swift */; };
+		CD52F396260931F900209B9E /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52F395260931F900209B9E /* AudioPlayer.swift */; };
+		CD52F39C2609356D00209B9E /* AudioPlayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52F39B2609356D00209B9E /* AudioPlayerExtension.swift */; };
+		CD52F3A12609359F00209B9E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52F3A02609359F00209B9E /* Item.swift */; };
+		CDF22F3E2609ECD100DD526C /* AudioPlayerObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF22F332609E85F00DD526C /* AudioPlayerObserver.swift */; };
+		CDF22F432609FA4300DD526C /* ViewControllerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF22F422609FA4300DD526C /* ViewControllerDetail.swift */; };
+		CDF22F482609FFCC00DD526C /* Central.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF22F472609FFCC00DD526C /* Central.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,12 @@
 		CD52F380260931A000209B9E /* TEST_OBSERVERUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TEST_OBSERVERUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD52F384260931A000209B9E /* TEST_OBSERVERUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEST_OBSERVERUITests.swift; sourceTree = "<group>"; };
 		CD52F386260931A000209B9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD52F395260931F900209B9E /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		CD52F39B2609356D00209B9E /* AudioPlayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerExtension.swift; sourceTree = "<group>"; };
+		CD52F3A02609359F00209B9E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		CDF22F332609E85F00DD526C /* AudioPlayerObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerObserver.swift; sourceTree = "<group>"; };
+		CDF22F422609FA4300DD526C /* ViewControllerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDetail.swift; sourceTree = "<group>"; };
+		CDF22F472609FFCC00DD526C /* Central.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Central.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +113,7 @@
 		CD52F35E2609319900209B9E /* TEST_OBSERVER */ = {
 			isa = PBXGroup;
 			children = (
+				CD52F39A2609323C00209B9E /* Fachlogik */,
 				CD52F35F2609319900209B9E /* AppDelegate.swift */,
 				CD52F3612609319900209B9E /* SceneDelegate.swift */,
 				CD52F3632609319900209B9E /* ViewController.swift */,
@@ -109,6 +122,8 @@
 				CD52F36D2609319F00209B9E /* LaunchScreen.storyboard */,
 				CD52F3702609319F00209B9E /* Info.plist */,
 				CD52F3682609319900209B9E /* TEST_OBSERVER.xcdatamodeld */,
+				CDF22F422609FA4300DD526C /* ViewControllerDetail.swift */,
+				CDF22F472609FFCC00DD526C /* Central.swift */,
 			);
 			path = TEST_OBSERVER;
 			sourceTree = "<group>";
@@ -129,6 +144,17 @@
 				CD52F386260931A000209B9E /* Info.plist */,
 			);
 			path = TEST_OBSERVERUITests;
+			sourceTree = "<group>";
+		};
+		CD52F39A2609323C00209B9E /* Fachlogik */ = {
+			isa = PBXGroup;
+			children = (
+				CDF22F332609E85F00DD526C /* AudioPlayerObserver.swift */,
+				CD52F395260931F900209B9E /* AudioPlayer.swift */,
+				CD52F39B2609356D00209B9E /* AudioPlayerExtension.swift */,
+				CD52F3A02609359F00209B9E /* Item.swift */,
+			);
+			path = Fachlogik;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +288,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD52F3642609319900209B9E /* ViewController.swift in Sources */,
+				CDF22F432609FA4300DD526C /* ViewControllerDetail.swift in Sources */,
 				CD52F36A2609319900209B9E /* TEST_OBSERVER.xcdatamodeld in Sources */,
+				CD52F396260931F900209B9E /* AudioPlayer.swift in Sources */,
+				CDF22F3E2609ECD100DD526C /* AudioPlayerObserver.swift in Sources */,
+				CD52F39C2609356D00209B9E /* AudioPlayerExtension.swift in Sources */,
+				CD52F3A12609359F00209B9E /* Item.swift in Sources */,
+				CDF22F482609FFCC00DD526C /* Central.swift in Sources */,
 				CD52F3602609319900209B9E /* AppDelegate.swift in Sources */,
 				CD52F3622609319900209B9E /* SceneDelegate.swift in Sources */,
 			);
