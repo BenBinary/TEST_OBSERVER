@@ -22,9 +22,14 @@ class AudioPlayer {
     }
     
     
+    
+    
     // private let notificationcenter: NotificationCenter
-    private var observations = [ObjectIdentifier : Observation]()
-    //  public let item = Item()
+    // private var observations = [ObjectIdentifier : Observation]()
+    
+    private var observations = (started: [UUID: (AudioPlayer, Item) -> Void](),
+                                paused: [UUID: (AudioPlayer, Item) -> Void](),
+                                stopped: [UUID: (AudioPlayer) -> Void]())
     
     /*
      init(notificationCenter: NotificationCenter = .default) {
@@ -69,6 +74,7 @@ class AudioPlayer {
 /**
  To Add and remove Observer
  */
+/*
 extension AudioPlayer {
     
     func addObserver(_ observer: AudioPlayerObserver) {
@@ -83,6 +89,37 @@ extension AudioPlayer {
         
     }
     
+} */
+
+
+extension AudioPlayer {
+    
+    
+    // Zum Starten des Observers
+    @discardableResult
+    func observePlaybackStarted(using closure: @escaping (AudioPlayer, Item) -> Void) -> ObservationToken {
+        
+        let id = observations.started.insert(closure)
+        return ObservationToken { [weak self] in self?.observations.started.removeValue(forKey: id) }
+        
+    }
+    
+    @discardableResult
+    func observePlaybackPaused(using closure: @escaping (AudioPlayer, Item) -> Void) -> ObservationToken {
+       
+        let id = observations.paused.insert(closure)
+        return ObservationToken { [weak self] in self?.observations.paused.removeValue(forKey: id) }
+        
+    }
+    
+    @discardableResult
+    func observePlaybackStopped(using closure: @escaping (AudioPlayer) -> Void) -> ObservationToken {
+        
+        let id = observations.stopped.insert(closure)
+        return ObservationToken { [weak self] in self?.observations.stopped.removeValue(forKey: id) }
+        
+    }
+    
 }
 
 private extension AudioPlayer {
@@ -93,32 +130,19 @@ private extension AudioPlayer {
     
     
     func stateDidChange() {
-        
-        for (id, observation) in observations {
-            
-            
-            guard let observer = observation.observer else {
-                observations.removeValue(forKey: id)
-                continue
-            }
-            
+ 
             switch state {
             
             case .idle:
-                observer.audioPlayerDidStop(self)
+                observations.stopped.values.forEach { closure in closure(self) }
                 
             case .playing(let item):
-                observer.audioPlayer(self, didStartPlaying: item)
-            //notificationcenter.post(name: .playbackStarted, object: item )
-            
+                observations.started.values.forEach { closure in closure(self, item) }
+                
             case .paused(let item):
-                observer.audioPlayer(self, didPausePlaybackOf: item)
-            //notificationcenter.post(name: .playbackPaused, object: item)
-            
-            
+                observations.paused.values.forEach { closure in closure(self, item) }
             }
             
-        }
         
     }
     
@@ -129,4 +153,18 @@ private extension AudioPlayer {
         case paused(Item)
         
     }
+}
+
+
+/// Extension to assign dedicated UUIDs
+private extension Dictionary where Key == UUID {
+    
+    mutating func insert(_ value: Value) -> UUID {
+        
+        let id = UUID()
+        self[id] = value
+        return id
+        
+    }
+    
 }

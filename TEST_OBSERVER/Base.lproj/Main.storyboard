@@ -61,14 +61,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1m-JX-PRd">
-                                <rect key="frame" x="142" y="382" width="125" height="45"/>
+                                <rect key="frame" x="125" y="506" width="125" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCz-1l-rze">
-                                <rect key="frame" x="150" y="488" width="109" height="21"/>
+                                <rect key="frame" x="132" y="612" width="109" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -90,6 +90,14 @@
                                     <action selector="startPlayDrowning:" destination="aV9-ut-eXL" eventType="touchUpInside" id="cd6-zO-kkc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBj-9Y-YYt">
+                                <rect key="frame" x="84" y="389" width="183" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play - Hold the line"/>
+                                <connections>
+                                    <action selector="startPlayHoldtheline:" destination="aV9-ut-eXL" eventType="touchUpInside" id="Yg7-j0-O36"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jqa-Uo-F9J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -103,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCk-KZ-NvG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="171" y="-706"/>
+            <point key="canvasLocation" x="169.56521739130437" y="-706.47321428571422"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bAL-Nd-ojE">
@@ -116,7 +124,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="aV9-ut-eXL" kind="relationship" relationship="viewControllers" id="c0p-MP-cd7"/>
-                        <segue destination="Sab-ei-xiG" kind="relationship" relationship="viewControllers" id="8Ye-Z2-lAR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G2X-vJ-7KY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

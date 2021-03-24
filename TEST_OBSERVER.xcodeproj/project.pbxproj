@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD0A423B260B78CD002751D7 /* ObservationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A423A260B78CD002751D7 /* ObservationToken.swift */; };
 		CD52F3602609319900209B9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52F35F2609319900209B9E /* AppDelegate.swift */; };
 		CD52F3622609319900209B9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52F3612609319900209B9E /* SceneDelegate.swift */; };
 		CD52F3642609319900209B9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52F3632609319900209B9E /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD0A423A260B78CD002751D7 /* ObservationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationToken.swift; sourceTree = "<group>"; };
 		CD52F35C2609319900209B9E /* TEST_OBSERVER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TEST_OBSERVER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD52F35F2609319900209B9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD52F3612609319900209B9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				CD52F395260931F900209B9E /* AudioPlayer.swift */,
 				CD52F39B2609356D00209B9E /* AudioPlayerExtension.swift */,
 				CD52F3A02609359F00209B9E /* Item.swift */,
+				CD0A423A260B78CD002751D7 /* ObservationToken.swift */,
 			);
 			path = Fachlogik;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				CD52F396260931F900209B9E /* AudioPlayer.swift in Sources */,
 				CDF22F3E2609ECD100DD526C /* AudioPlayerObserver.swift in Sources */,
 				CD52F39C2609356D00209B9E /* AudioPlayerExtension.swift in Sources */,
+				CD0A423B260B78CD002751D7 /* ObservationToken.swift in Sources */,
 				CD52F3A12609359F00209B9E /* Item.swift in Sources */,
 				CDF22F482609FFCC00DD526C /* Central.swift in Sources */,
 				CD52F3602609319900209B9E /* AppDelegate.swift in Sources */,

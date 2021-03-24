@@ -17,7 +17,7 @@ class ViewControllerDetail: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Central.player.addObserver(self)
+       // Central.player.addObserver(self)
     }
     
     
