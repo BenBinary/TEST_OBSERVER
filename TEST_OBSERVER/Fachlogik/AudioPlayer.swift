@@ -94,7 +94,7 @@ extension AudioPlayer {
 
 extension AudioPlayer {
     
-    
+    /*
     // Zum Starten des Observers
     @discardableResult
     func observePlaybackStarted(using closure: @escaping (AudioPlayer, Item) -> Void) -> ObservationToken {
@@ -118,9 +118,42 @@ extension AudioPlayer {
         let id = observations.stopped.insert(closure)
         return ObservationToken { [weak self] in self?.observations.stopped.removeValue(forKey: id) }
         
+    }  */
+    
+    /**
+                Combining Both approaches for **tokens** and `blub`
+     */
+    @discardableResult
+    func addPlaybackStartedObserver<T: AnyObject>(_ observer: T, closure: @escaping (T, AudioPlayer, Item) -> Void) -> ObservationToken {
+        
+        let id = UUID()
+        
+        observations.started[id] = { [weak self, weak observer] player, item in
+            
+            /// if the observer has been deallocated, we can
+            /// automatically remove the observations closure
+            
+            guard let observer = observer else {
+                
+                self?.observations.started.removeValue(forKey: id)
+                return
+                
+            }
+            
+            closure(observer, player, item)
+            
+        }
+        
+        return ObservationToken { [weak self] in self?.observations.started.removeValue(forKey: id) }
+        
+        
     }
+   
     
 }
+
+
+
 
 private extension AudioPlayer {
     
@@ -157,7 +190,7 @@ private extension AudioPlayer {
 
 
 /// Extension to assign dedicated UUIDs
-private extension Dictionary where Key == UUID {
+extension Dictionary where Key == UUID {
     
     mutating func insert(_ value: Value) -> UUID {
         

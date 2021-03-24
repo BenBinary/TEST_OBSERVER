@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var durationLabel: UILabel!
     var player = AudioPlayer()
     private var observationToken: ObservationToken?
+ //   var vc = self()
+    
+    
     
     
     //private var notificationcenter = NotificationCenter()
@@ -29,6 +32,8 @@ class ViewController: UIViewController {
        
         super.viewDidLoad()
         
+        //var item = AudioPlayer.Item.init(title: "Nobody wants to be lonely", duration: 5.00)
+        //var vc = ViewController()
 //        Central.player.addObserver(self)
         
         //notificationcenter = .default
@@ -37,12 +42,25 @@ class ViewController: UIViewController {
         
         //notificationcenter.addObserver(self, selector: #selector(playbackDidStart), name: .playbackStarted, object: nil)
         
-        
+        /*
        observationToken = player.observePlaybackStarted(using: { player, item in
             
             self.titelLabel.text = item.title
             self.durationLabel.text = "\(item.duration)"
+        }) */
+        
+        
+        player.addPlaybackStartedObserver(self, closure: {
+            
+            vc, player, item in
+            
+            vc.titelLabel.text = item.title
+            vc.durationLabel.text = "\(item.duration)"
+            
         })
+        
+        
+        
     }
     
     @IBAction func startPlay(_ sender: UIButton) {
